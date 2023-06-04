@@ -58,17 +58,17 @@
       #Verificar la aserción de este escneario
       Examples:
         |correo| contrasena| mensaje |
-        |correopruebapragma| Demo123      |Product added. |
+        |correopruebapragma| Demo123      |	MacBook air |
 
     @Escenario6-CarritoDeCompras
     Scenario Outline:
-      When ingresa al carrito para verificar su pedido
-      Then ingresa los datos del recibo requeridos que son "<nombre>" "<pais>" "<ciudad>" "<tarjeta>" "<mes>" "<año>"
+      Given el usuario ingresa a la parte de iniciar sesion ingresa "<correo>" y "<contrasena>"
+      Then ingresa al carrito y ingresa los datos "<nombre>" "<pais>" "<ciudad>" "<tarjeta>" "<mes>" "<año>"
       Then Debe ver un dialogo que indica "<compra>"
 
     Examples:
-      |nombre|pais|ciudad|tarjeta|mes|año|compra|
-      |Juan  |Colombia|Cali|4111111|02|27 |  Thank you for your purchase!   |
+      |correo | contrasena |nombre|pais|ciudad|tarjeta|mes|año|compra|
+      |correopruebapragma|Demo123|Juan  |Colombia|Cali|4111111|02|27 |  Thank you for your purchase!   |
 
 
 

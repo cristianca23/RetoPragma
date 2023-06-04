@@ -44,4 +44,30 @@ public class ProductStorePage {
     public static final Target TXTMONITOR = PageElement.located(By.xpath("//td[normalize-space()='Apple monitor 24']"));
 
     public static final Target PRICEMONITOR = PageElement.located(By.xpath("//td[normalize-space()='400']"));
+
+    public static final Target BUTTONLAPTOPS = PageElement.located(By.xpath("//button[@id='next2']"));
+
+
+    public static final Target PRODUCTMACBOOK = PageElement.located(By.xpath("//*[@id='tbodyid']/div[2]/div/div/h4/a"));
+
+    public static final Target TEXTMACBOOK = PageElement.located(By.xpath("//td[normalize-space()='MacBook air']"));
+
+    public static final Target BUTTONPLACEORDER = PageElement.located(By.xpath("//button[normalize-space()='Place Order']"));
+
+    public static final Target TXTNAME = PageElement.located(By.id("name"));
+
+    public static final Target TXTPAIS = PageElement.located(By.id("country"));
+
+    public static final Target TXTCITY = PageElement.located(By.id("city"));
+
+    public static final Target TXTCARD = PageElement.located(By.id("card"));
+
+    public static final Target TXTMONTH = PageElement.located(By.id("month"));
+
+    public static final Target TXTYEAR = PageElement.located(By.id("year"));
+
+    public static final Target BUTTONPURCHASE = PageElement.located(By.xpath("//button[normalize-space()='Purchase']"));
+
+    public static final Target TXTTHANKS = PageElement.located(By.xpath("//h2[normalize-space()='Thank you for your purchase!']"));
+
 }

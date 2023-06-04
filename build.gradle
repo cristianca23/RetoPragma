@@ -42,6 +42,7 @@ ext {
     javaxMailVersion = "1.5.0-b01"
     mongoDBVersion = "3.12.11"
     seleniumJava = "4.7.2"
+    serenityEnsure = "2.3.5"
 
 }
 
@@ -50,13 +51,15 @@ dependencies {
             "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
             "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityEnsure}",
             "ch.qos.logback:logback-classic:${logbackVersion}",
             "com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnotations}",
             "junit:junit:${junitVersion}",
             "org.assertj:assertj-core:${assertJVersion}"
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+
 }
 
 test {
