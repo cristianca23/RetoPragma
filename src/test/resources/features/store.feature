@@ -1,8 +1,9 @@
-
+  @pruebaTecnica
   Feature:Registro y compra de articulos en la pagina Store
     Se espera que el usuario pueda realizar diferentes compras de articulos
     ademas tambien se espera que el usuario pueda comunicarse con soporte en
     caso de que tenga algún inconveniente en la compra
+
 
     Background:
       Given Juan quiere ingresar a Store
@@ -63,12 +64,23 @@
     @Escenario6-CarritoDeCompras
     Scenario Outline:
       Given el usuario ingresa a la parte de iniciar sesion ingresa "<correo>" y "<contrasena>"
-      Then ingresa al carrito y ingresa los datos "<nombre>" "<pais>" "<ciudad>" "<tarjeta>" "<mes>" "<año>"
+      Then ingresa al carrito y ingresa los datos "<nombre>" "<pais>" "<ciudad>" "<tarjeta>" "<mes>" "<ano>"
       Then Debe ver un dialogo que indica "<compra>"
 
     Examples:
-      |correo | contrasena |nombre|pais|ciudad|tarjeta|mes|año|compra|
+      |correo | contrasena |nombre|pais|ciudad|tarjeta|mes|ano|compra|
       |correopruebapragma|Demo123|Juan  |Colombia|Cali|4111111|02|27 |  Thank you for your purchase!   |
+
+    @Escenario7-AgregarDiferentesProductos
+    Scenario Outline:
+      Given el usuario ingresa a la parte de iniciar sesion ingresa "<correo>" y "<contrasena>"
+      When el usuario selecciona 3 productos
+      Then ingresa al carrito y ingresa los datos "<nombre>" "<pais>" "<ciudad>" "<tarjeta>" "<mes>" "<ano>"
+      Then Debe ver un dialogo que indica "<compra>"
+
+      Examples:
+        |correo | contrasena |nombre|pais|ciudad|tarjeta|mes|ano|compra|
+        |correopruebapragma|Demo123|Juan  |Colombia|Cali|4111111|02|27 |  Thank you for your purchase!   |
 
 
 

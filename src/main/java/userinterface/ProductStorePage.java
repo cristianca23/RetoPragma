@@ -70,4 +70,5 @@ public class ProductStorePage {
 
     public static final Target TXTTHANKS = PageElement.located(By.xpath("//h2[normalize-space()='Thank you for your purchase!']"));
 
+    public static final Target BUTTONHOME = PageElement.located(By.xpath("//li[@class='nav-item active']//a[@class='nav-link']"));
 }

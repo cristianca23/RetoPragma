@@ -1,5 +1,6 @@
 package tasks;
 
+import interactions.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -32,6 +33,7 @@ public class Informacion implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
+                Esperar.unMomento(2),
                 WaitUntil.the(BUTTONCART, WebElementStateMatchers.isClickable()),
                 Click.on(BUTTONCART),
                 Click.on(BUTTONPLACEORDER),

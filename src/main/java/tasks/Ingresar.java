@@ -1,5 +1,6 @@
 package tasks;
 
+import interactions.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -26,7 +27,9 @@ public class Ingresar implements Task {
         actor.attemptsTo(Click.on(BUTTONLOGIN.waitingForNoMoreThan(Duration.ofSeconds(5))));
         actor.attemptsTo(Enter.theValue(correo).into(INPUTUSERNAME));
         actor.attemptsTo(Enter.theValue(clave).into(INPUTPASSWORD));
-        actor.attemptsTo(Click.on(BUTTONLOGIN2.waitingForNoMoreThan(Duration.ofSeconds(5))));
+        actor.attemptsTo(Click.on(BUTTONLOGIN2.waitingForNoMoreThan(Duration.ofSeconds(5))),
+        Esperar.unMomento(1)
+        );
 
 
     }

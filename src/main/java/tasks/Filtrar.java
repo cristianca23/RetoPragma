@@ -20,6 +20,7 @@ public class Filtrar implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unMomento(2),
                 Scroll.to(BUTTONLAPTOPS),
                 Click.on(BUTTONLAPTOPS.waitingForNoMoreThan(Duration.ofSeconds(5))),
                 Esperar.unMomento(5),

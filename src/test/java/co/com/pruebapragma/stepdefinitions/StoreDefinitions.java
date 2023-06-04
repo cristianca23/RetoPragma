@@ -44,9 +44,8 @@ public class StoreDefinitions {
 
     @Then("Debe ver el mensaje de bienvenida {string}")
     public void debeVerElMensajeDeBienvenida(String mensaje) {
-        OnStage.theActorInTheSpotlight().should(
-                seeThat(mensaje, Validar.mensaje(), equalTo(BIENVENIDA))
-        );
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Validar.mensaje(mensaje)));
+
 
     }
 
@@ -109,7 +108,10 @@ public class StoreDefinitions {
     @Then("Debe ver un dialogo que indica {string}")
     public void debeVerUnDialogoQueIndica(String mensaje) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Compra.exitosa(mensaje)));
+    }
 
-
+    @When("el usuario selecciona {int} productos")
+    public void elUsuarioSeleccionaProductos(Integer productos) {
+       OnStage.theActor(actor).attemptsTo(Escoger.productos(productos));
     }
 }
