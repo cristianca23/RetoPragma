@@ -33,4 +33,15 @@ public class ProductStorePage {
 
     public static final Target BUTTONSENDMESSAGE = PageElement.located(By.xpath("(//button[normalize-space()='Send message'])[1]"));
 
+    public static final Target BUTTONCART = PageElement.located(By.id("cartur"));
+
+    public static final Target TXTTITLE = PageElement.located(By.xpath("//td[normalize-space()='Iphone 6 32gb']"));
+
+    public static final Target BUTTONMONITORS = PageElement.located(By.xpath("//a[4]"));
+
+    public static final Target MONITORAPPLE = PageElement.located(By.xpath("//a[normalize-space()='Apple monitor 24']"));
+
+    public static final Target TXTMONITOR = PageElement.located(By.xpath("//td[normalize-space()='Apple monitor 24']"));
+
+    public static final Target PRICEMONITOR = PageElement.located(By.xpath("//td[normalize-space()='400']"));
 }

@@ -1,25 +1,31 @@
 package co.com.pruebapragma.stepdefinitions;
 
+import io.cucumber.java.DataTableType;
 import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import models.DatosProductos;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actions.HtmlAlert;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.ensure.*;
 import questions.Comprobar;
 import questions.Validar;
-import tasks.Abrir;
-import tasks.Contactar;
-import tasks.Ingresar;
-import tasks.Seleccionar;
+import questions.Ver;
+import questions.Verificar;
+import tasks.*;
+
+import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static util.Helpers.BIENVENIDA;
 
 public class StoreDefinitions {
+
+
+
 
     public String actor;
     @Given("^(.*) quiere ingresar a Store$")
@@ -49,9 +55,8 @@ public class StoreDefinitions {
     }
 
     @Then("el usuario ve seleccionado el {string} en el carrito de compras")
-    public void elUsuarioVeSeleccionadoElEnElCarritoDeCompras(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void elUsuarioVeSeleccionadoElEnElCarritoDeCompras(String producto) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Ver.carrito(producto)));
     }
 
     @When("Juan Ingresa al formulario de contacto y llena los datos {string} {string} y {string}")
@@ -61,6 +66,22 @@ public class StoreDefinitions {
     @Then("debe salir un mensaje de agradecimiento por el {string}")
     public void debeSalirUnMensajeDeAgradecimientoPorEl(String mensaje) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Comprobar.producto(mensaje)));
+    }
+
+
+    @When("el usuario selecciona dos Monitores")
+    public void elUsuarioSeleccionaDosMonitores() {
+        OnStage.theActorCalled(actor).attemptsTo(Buscar.monitores());
+    }
+
+    @DataTableType
+    public DatosProductos datosProductos (Map<String, String> datosProducto){
+        return new DatosProductos(datosProducto.get("nombre"),
+                datosProducto.get("valor"));
+    }
+    @Then("el usuario ve seleccionado el producto en el carrito de compras y su costo")
+    public void elUsuarioVeSeleccionadoElProductoEnElCarritoDeComprasYSuCosto(DatosProductos productos) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Verificar.monitores(productos)));
     }
 
 

@@ -41,12 +41,13 @@
 
     Scenario Outline:
       Given el usuario ingresa a la parte de iniciar sesion ingresa "<correo>" y "<contrasena>"
-      When el usuario selecciona un Monitor
-      Then ve el producto agregado con el mensaje "<mensaje>"
-      #Verificar la aserción de este escneario
+      When el usuario selecciona dos Monitores
+      Then el usuario ve seleccionado el producto en el carrito de compras y su costo
+      |producto | valor|
+      |<producto> | <valor>|
       Examples:
-        |correo| contrasena| mensaje |
-        |correopruebapragma| Demo123      |Product added. |
+        |correo| contrasena| producto | valor |
+        |correopruebapragma| Demo123      |    Apple monitor 24 | 400 |
 
     @Escenario5-AgregarLaptops
 

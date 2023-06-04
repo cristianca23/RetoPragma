@@ -25,10 +25,13 @@ public class Seleccionar implements Task {
 
         actor.attemptsTo(WaitUntil.the(BOTONPRODUCTO, WebElementStateMatchers.isClickable()),
                 Click.on(BOTONPRODUCTO.waitingForNoMoreThan(Duration.ofSeconds(5))),
-                WaitUntil.the(BOTTONADDTOCART, WebElementStateMatchers.isClickable())
+                WaitUntil.the(BOTTONADDTOCART, WebElementStateMatchers.isClickable()),
+                Click.on(BOTTONADDTOCART.waitingForNoMoreThan(Duration.ofSeconds(5))),
+                WaitUntil.the(BUTTONCART, WebElementStateMatchers.isClickable()),
+                Click.on(BUTTONCART)
                 );
 
-        actor.attemptsTo(Click.on(BOTTONADDTOCART.waitingForNoMoreThan(Duration.ofSeconds(5))));
+
     }
 
 
