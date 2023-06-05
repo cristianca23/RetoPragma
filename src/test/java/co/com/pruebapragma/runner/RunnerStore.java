@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = {"co.com.pruebapragma.stepdefinitions"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         dryRun = false,
-        tags = "@pruebaTecnica"
+        tags = "@Escenario1-Login"
 )
 
 

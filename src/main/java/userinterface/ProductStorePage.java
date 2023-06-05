@@ -1,6 +1,6 @@
 package userinterface;
 
-import com.gargoylesoftware.htmlunit.Page;
+
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.ui.PageElement;
 import org.openqa.selenium.By;

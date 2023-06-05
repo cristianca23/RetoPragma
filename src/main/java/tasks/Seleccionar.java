@@ -6,13 +6,9 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.DoubleClick;
 import net.serenitybdd.screenplay.actions.Switch;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
-import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.serenitybdd.screenplay.waits.WaitUntilTargetIsReady;
-import net.serenitybdd.screenplay.waits.WaitWithTimeout;
 
 
 import java.time.Duration;

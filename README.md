@@ -1,6 +1,8 @@
 # Proyecto realizado usando Serenity BDD
 04/06/2023
+##Version de Java
 
+El proyecto fue desarrollado en la versión Java 17, por lo que se debe tener en cuenta que en la maquina en la cual se vaya a ejecutar el proyecto debe tener esta versión de java instalada
 ## Navegadores
 El proyecto esta diseñado para correr en navegadores como Chrome, Edge o Firefox
 
